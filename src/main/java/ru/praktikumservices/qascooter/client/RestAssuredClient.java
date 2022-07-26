@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikumservices.qascooter.client;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -40,7 +40,6 @@ public class RestAssuredClient {
                 .when()
                 .delete(path, pathParams);
     }
-
 }
 
 

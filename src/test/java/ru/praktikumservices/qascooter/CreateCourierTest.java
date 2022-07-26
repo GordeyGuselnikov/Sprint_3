@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikumservices.qascooter;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -6,6 +6,9 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ru.praktikumservices.qascooter.client.CourierClient;
+import ru.praktikumservices.qascooter.model.Courier;
+import ru.praktikumservices.qascooter.model.CourierCredentials;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -63,7 +66,6 @@ public class CreateCourierTest extends TestBase {
 
         // Assert
         assertEquals("Тело ответа не совпадает с документацией", message, "Этот логин уже используется");
-
     }
 
     @Test
@@ -81,7 +83,6 @@ public class CreateCourierTest extends TestBase {
         // Assert
         assertNotNull("Ошибка не возвращается", messageResponse);
         assertEquals("Тело ответа не совпадает с документацией", messageResponse, "Недостаточно данных для создания учетной записи");
-
     }
 
     @Test
@@ -102,6 +103,4 @@ public class CreateCourierTest extends TestBase {
         // Assert
         assertEquals("Тело ответа не совпадает с документацией", message, "Этот логин уже используется");
     }
-
-
 }

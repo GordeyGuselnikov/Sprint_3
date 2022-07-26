@@ -1,12 +1,13 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikumservices.qascooter;
 
 import io.qameta.allure.Description;
-import io.qameta.allure.Issue;
-import io.qameta.allure.TmsLink;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ru.praktikumservices.qascooter.client.CourierClient;
+import ru.praktikumservices.qascooter.model.Courier;
+import ru.praktikumservices.qascooter.model.CourierCredentials;
 
 import static io.qameta.allure.Allure.step;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -63,7 +64,6 @@ public class LoginCourierTest {
 
         // Assert
         assertEquals("", message, "Учетная запись не найдена");
-
     }
 
     @Test

@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikumservices.qascooter;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -6,6 +6,8 @@ import io.restassured.response.Response;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.praktikumservices.qascooter.client.RestAssuredClient;
+import ru.praktikumservices.qascooter.model.Order;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -39,7 +41,6 @@ public class CreateOrderTest extends TestBase {
                 .extract()
                 .path("track");
         assertNotNull("Заказ не создан!", actual);
-
     }
 
     @Test
@@ -60,7 +61,6 @@ public class CreateOrderTest extends TestBase {
                 .extract()
                 .path("track");
         assertNotNull("Заказ не создан!", actual);
-
     }
 
     @Test
@@ -81,7 +81,6 @@ public class CreateOrderTest extends TestBase {
                 .extract()
                 .path("track");
         assertNotNull("Заказ не создан!", actual);
-
     }
 
     @Test
@@ -102,5 +101,4 @@ public class CreateOrderTest extends TestBase {
                 .and()
                 .body("orders", notNullValue());
     }
-
 }

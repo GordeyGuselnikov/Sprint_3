@@ -1,6 +1,9 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikumservices.qascooter.client;
 
 import io.qameta.allure.Step;
+import ru.praktikumservices.qascooter.model.Courier;
+import ru.praktikumservices.qascooter.model.CourierCredentials;
+
 import static io.restassured.RestAssured.given;
 
 public class CourierClient extends RestAssuredClient {
@@ -55,7 +58,6 @@ public class CourierClient extends RestAssuredClient {
                 .statusCode(409)
                 .extract()
                 .path("message");
-
     }
 
     @Step("Запрос на создание учетной записи {courier} без логина или пароля")
